@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Display = ({allTodos, setAllTodos, removeTodo}) => {
+const Display = ({allTodos, setAllTodos}) => {
 
   const toggleComplete = (index) => {
     const newTodos = [...allTodos];
     // when toggled, updates with '!' the boolean value to true
     newTodos[index].complete = !newTodos[index].complete;
+    setAllTodos(newTodos);
+  };
+
+  const removeTodo = (index) => {
+    const newTodos = allTodos.filter((e, i) => i !== index);
     setAllTodos(newTodos);
   };
 

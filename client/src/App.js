@@ -6,15 +6,10 @@ import './App.css';
 function App() {
   const [allTodos, setAllTodos] = useState([]);
 
-  const removeTodo = (index) => {
-    const newTodos = allTodos.filter((e, i) => i !== index);
-    setAllTodos(newTodos);
-  };
-
   return (
     <div className="App">
       <Form allTodos={allTodos} setAllTodos={setAllTodos}/>
-      <Display allTodos={allTodos} setAllTodos={setAllTodos} removeTodo={removeTodo}/>
+      <Display allTodos={allTodos} setAllTodos={setAllTodos}/>
     </div>
   );
 }
